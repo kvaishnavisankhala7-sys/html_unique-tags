@@ -2,105 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Player Legend Dashboard</title>
+    <title>HomeHub Dashboard</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
             display: flex;
             justify-content: center;
-            padding: 40px;
+            padding: 50px;
         }
 
-        .profile-card {
-            background: #161b22;
-            border: 2px solid #30363d;
-            border-radius: 15px;
+        .hub-card {
+            background: white;
+            width: 350px;
             padding: 25px;
-            width: 400px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
         }
 
-        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        h1 { color: #333; font-size: 22px; margin-bottom: 20px; }
 
-        /* 1. <abbr> Style */
-        abbr {
-            text-decoration: none;
-            border-bottom: 1px dashed #f85149;
-            cursor: help;
-            color: #f85149;
-        }
+        /* <mark> styling */
+        mark { background: #ffeb3b; padding: 2px 5px; border-radius: 4px; }
 
-        /* 2. <mark> Style */
-        mark {
-            background: #d29922;
-            color: black;
-            padding: 0 3px;
-            border-radius: 3px;
-        }
-
-        /* 3. <details> Style */
+        /* <details> styling */
         details {
-            margin: 20px 0;
-            background: #21262d;
-            border-radius: 8px;
-            padding: 10px;
+            background: #f1f3f4;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 15px 0;
         }
 
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-            color: #79c0ff;
-        }
+        summary { font-weight: bold; cursor: pointer; color: #1a73e8; }
 
-        /* 4. <meter> Style */
-        meter {
-            width: 100%;
-            height: 15px;
-            display: block;
-            margin-top: 5px;
-        }
+        /* <meter> styling */
+        meter { width: 100%; height: 12px; margin-top: 8px; }
 
-        /* 5. <datalist> Style */
+        /* <datalist> input styling */
         input {
             width: 100%;
-            background: #0d1117;
-            border: 1px solid #30363d;
-            color: white;
             padding: 10px;
-            border-radius: 5px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             margin-top: 10px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
 
-<div class="profile-card">
-    <h1>Player: CyberKnight</h1>
+<div class="hub-card">
+    <h1>Living Room <abbr title="Smart Home Hub">SHH</abbr></h1>
 
-    <p>Rank: <mark>Legendary Elite</mark></p>
-    
-    <p>Current Status: Looking for <abbr title="Player vs Player">PvP</abbr> matches.</p>
+    <p>Security: <mark>Armed & Secure</mark></p>
 
+    <object data="security_cam_stream.mp4">
+        <param name="contrast" value="75">
+        <param name="nightVision" value="on">
+        <param name="sensitivity" value="high">
+    </object>
     <details>
-        <summary>View Combat Stats</summary>
-        <p>Stamina Level:</p>
-        <meter min="0" max="100" low="20" high="80" optimum="95" value="85"></meter>
-        
-        <p>Experience Points (XP):</p>
-        <meter min="0" max="1000" value="650"></meter>
-        <p><small>650/1000 to next level</small></p>
+        <summary>View Device Health</summary>
+        <div style="margin-top:10px;">
+            <p>Wi-Fi Signal Strength:</p>
+            <meter min="0" max="100" low="30" high="70" optimum="90" value="85"></meter>
+            
+            <p>Battery: 85%</p>
+            <p>Last Update: <time datetime="2026-02-18">10 mins ago</time></p>
+        </div>
     </details>
 
     <div style="margin-top: 20px;">
-        <label for="weapon">Equip Weapon:</label>
-        <input list="weapons" id="weapon" placeholder="Search Armory...">
-        <datalist id="neighborhoods">
-            <option value="Plasma Sword">
-            <option value="Shadow Bow">
-            <option value="Gravity Hammer">
-            <option value="Laser Rifle">
+        <label for="room">Jump to Room:</label>
+        <input list="rooms" id="room" placeholder="Kitchen, Bedroom...">
+        <datalist id="rooms">
+            <option value="Kitchen">
+            <option value="Master Bedroom">
+            <option value="Garage">
+            <option value="Front Porch">
         </datalist>
     </div>
 </div>
